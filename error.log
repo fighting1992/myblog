@@ -1,0 +1,72 @@
+[Sun Jun 29 2014 16:52:06 GMT+0800 (中国标准时间)] /
+Error: no open connections
+    at Db._executeQueryCommand (E:\workplace\blog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1802:21)
+    at Cursor.nextObject (E:\workplace\blog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:729:13)
+    at Cursor.nextObject (E:\workplace\blog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\scope.js:22:20)
+    at Collection.findOne (E:\workplace\blog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\collection\query.js:145:10)
+    at E:\workplace\blog\node_modules\connect-mongo\lib\connect-mongo.js:214:18
+    at MongoStore._get_collection (E:\workplace\blog\node_modules\connect-mongo\lib\connect-mongo.js:148:21)
+    at MongoStore.get (E:\workplace\blog\node_modules\connect-mongo\lib\connect-mongo.js:213:10)
+    at Layer.session [as handle] (E:\workplace\blog\node_modules\express-session\index.js:215:11)
+    at trim_prefix (E:\workplace\blog\node_modules\express\lib\router\index.js:240:15)
+    at E:\workplace\blog\node_modules\express\lib\router\index.js:208:9
+[Wed Sep 03 2014 17:16:19 GMT+0800 (中国标准时间)] /
+Error: no open connections
+    at Db._executeQueryCommand (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1802:21)
+    at Cursor.nextObject (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:729:13)
+    at Cursor.nextObject (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\scope.js:22:20)
+    at Collection.findOne (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\collection\query.js:145:10)
+    at E:\web\newblog\node_modules\connect-mongo\lib\connect-mongo.js:214:18
+    at MongoStore._get_collection (E:\web\newblog\node_modules\connect-mongo\lib\connect-mongo.js:148:21)
+    at MongoStore.get (E:\web\newblog\node_modules\connect-mongo\lib\connect-mongo.js:213:10)
+    at Layer.session [as handle] (E:\web\newblog\node_modules\express-session\index.js:215:11)
+    at trim_prefix (E:\web\newblog\node_modules\express\lib\router\index.js:240:15)
+    at E:\web\newblog\node_modules\express\lib\router\index.js:208:9
+[Fri Sep 05 2014 11:05:38 GMT+0800 (中国标准时间)] /archive
+Error: no open connections
+    at Db._executeQueryCommand (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1802:21)
+    at Cursor.nextObject (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:729:13)
+    at Cursor.nextObject (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\scope.js:22:20)
+    at Collection.findOne (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\collection\query.js:145:10)
+    at E:\web\newblog\node_modules\connect-mongo\lib\connect-mongo.js:214:18
+    at MongoStore._get_collection (E:\web\newblog\node_modules\connect-mongo\lib\connect-mongo.js:148:21)
+    at MongoStore.get (E:\web\newblog\node_modules\connect-mongo\lib\connect-mongo.js:213:10)
+    at Layer.session [as handle] (E:\web\newblog\node_modules\express-session\index.js:215:11)
+    at trim_prefix (E:\web\newblog\node_modules\express\lib\router\index.js:240:15)
+    at E:\web\newblog\node_modules\express\lib\router\index.js:208:9
+[Tue Sep 09 2014 14:49:05 GMT+0800 (中国标准时间)] /
+Error: Error setting TTL index on collection : sessions
+    at E:\web\newblog\node_modules\connect-mongo\lib\connect-mongo.js:161:23
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1404:28
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1542:30
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:159:22
+    at commandHandler (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:678:48)
+    at Db._executeQueryCommand (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1802:12)
+    at Cursor.nextObject (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:729:13)
+    at Cursor.toArray (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:158:10)
+    at Cursor.toArray (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\scope.js:10:20)
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1541:65
+[Wed Sep 10 2014 19:43:41 GMT+0800 (中国标准时间)] /
+Error: Error setting TTL index on collection : sessions
+    at E:\web\newblog\node_modules\connect-mongo\lib\connect-mongo.js:161:23
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1404:28
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1542:30
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:159:22
+    at commandHandler (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:678:48)
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1806:9
+    at __executeQueryCommand (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1636:44)
+    at Db._executeQueryCommand (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1805:7)
+    at Cursor.nextObject (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:729:13)
+    at Cursor.toArray (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:158:10)
+[Wed Sep 10 2014 19:59:54 GMT+0800 (中国标准时间)] /
+Error: Error setting TTL index on collection : sessions
+    at E:\web\newblog\node_modules\connect-mongo\lib\connect-mongo.js:161:23
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1404:28
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1542:30
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:159:22
+    at commandHandler (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:678:48)
+    at Db._executeQueryCommand (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1802:12)
+    at Cursor.nextObject (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:729:13)
+    at Cursor.toArray (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:158:10)
+    at Cursor.toArray (E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\scope.js:10:20)
+    at E:\web\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1541:65

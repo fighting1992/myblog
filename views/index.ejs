@@ -1,0 +1,108 @@
+<link href="/stylesheets/index.css" rel="stylesheet">
+  <%- include header %>
+  <div class="article">
+    <div class="banner">
+      <ul class="texts">
+        <p>The best life is use of willing attitude, a happy-go-lucky life. </p>
+        <p>最好的生活是用心甘情愿的态度，过随遇而安的生活。</p>
+      </ul>
+    </div>
+    <div class="bloglist">
+        <h2>
+          <p><span>推荐</span>文章</p>
+        </h2>
+        
+        <% posts.forEach(function (post, index) { %>
+        <div class="blogs">
+          <h3><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h3>
+          <div class="figure"><img src="images/00<%= index+1 %>.jpg" ></div>
+          <ul>
+              <li class="con-txt"><%- post.post %></li>
+              
+      <br><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"  target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+    
+              
+          </ul>
+          <p class="autor">
+              <span>作者：xx</span>
+              <span>分类：<% post.tags.forEach(function (tag, index) { %>
+      <% if (tag) { %>
+        <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
+      <% } %>
+    <% }) %></span>
+              <span>浏览（<a href="/"><%= post.pv %></a>）</span>
+              <span>评论（<a href="/"><%= post.comments.length %></a>）</span>
+          </p>
+          <div class="dateview"><%= post.time.minute %></div>
+
+        </div>
+       
+        <% }) %>
+    </div>
+  </div>
+  <div class="aside">
+    <div class="avatar">
+      
+      <% if(user){ %>
+      <a href="/logout">
+        <span> 登出</span>
+      </a>
+      <% }else{ %>
+      <a href="/login" >
+        <span>私人入口</span>
+      </a> <% } %>
+     
+    </div>
+    
+    <div class="topspaceinfo">
+      <h1>子非鱼</h1>
+      <p>子非鱼，焉知鱼之乐</p>
+    </div>
+    <div class="about_c">
+      <p>网名：尖尖角 | 且行且珍惜</p>
+      <p>职业：Web前端工程师 </p>
+      <p>籍贯：黑龙江省-绥化市</p>
+      <p>电话：18500476596</p>
+      <p>邮箱：1109398921@qq.com</p>
+    </div>
+    <div class="bdsharebuttonbox"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_more" data-cmd="more"></a></div>
+    <div class="tj_news">
+      <h2>
+        <p class="tj_t1">最新文章</p>
+      </h2>
+      <ul>
+        <% posts.forEach(function (post, index) { %>
+        <li><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></li>
+        <% }) %>
+      </ul>
+    </div>
+    <div class="links">
+      <h2>
+        <p class="tj_t2">友情链接</p>
+      </h2>
+      <ul>
+        <li><a href="/">百度</a></li>
+        <li><a href="/">淘宝</a></li>
+      </ul>
+    </div>
+    <div class="copyright">
+      <ul>
+        
+        <p>xxxxxxxxxxx</p>
+        </p>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="clear"></div>
+  <!-- 清除浮动 --> 
+</div>
+</body>
+</html>
+<script src="javascripts/jquery.min.js"></script>
+<script>
+for(var i=0;i<$('.con-txt').length;i++){
+  var $text =$('.con-txt').get(i).innerHTML;
+  $('.con-txt').get(i).innerHTML = $text.substr(0,130) + '....';
+}
+</script>

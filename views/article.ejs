@@ -1,0 +1,71 @@
+<link href="/stylesheets/about.css" rel="stylesheet">
+  <%- include header %>
+  <div class="article">
+    <h3 class="about_h">您现在的位置是：首页&nbsp;>&nbsp;个人博客</h3>
+    <div class="about">
+      <h2><%- post.title %></h2>
+  <p>
+  	<% if (user && (user.name == post.name)) { %>
+	  <span><a class="edit" href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">编辑</a></span>
+	  <span><a class="edit" href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a></span>
+	<% } %>
+
+  <% var flag = 1 %>
+  <% if (user && (user.name != post.name)) { %>
+    <% if ((post.reprint_info.reprint_from != undefined) && (user.name == post.reprint_info.reprint_from.name)) { %>
+      <% flag = 0 %>
+    <% } %>
+    <% if ((post.reprint_info.reprint_to != undefined)) { %>
+      <% post.reprint_info.reprint_to.forEach(function (reprint_to, index) { %>
+        <% if (user.name == reprint_to.name) { %>
+          <% flag = 0 %>
+        <% } %>
+      <% }) %>
+    <% } %>
+  <% } else { %>
+    <% flag = 0 %>
+  <% } %>
+
+</p>
+<p class="info">
+  作者：陈岩| 
+  日期：<%= post.time.minute %> | 
+  标签：
+  <% post.tags.forEach(function (tag, index) { %>
+    <% if (tag) { %>
+      <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
+    <% } %>
+  <% }) %>
+</p>
+<ul>
+<p><%- post.post %></p>
+</ul>
+<p class="info">
+  阅读：<%= post.pv %> | 
+  评论：<%= post.comments.length %> 
+</p>
+
+<%- include comment %>
+</div>
+</div>
+<div class="aside">
+    <div class="avatar"><a href="about.html"><span>关于陈岩</span></a></div>
+    <div class="topspaceinfo">
+      <h1>子非鱼</h1>
+      <p>子非鱼，焉知鱼之乐....</p>
+    </div>
+    <div class="about_c">
+      <p>网名：尖尖角 | 且行且珍惜</p>
+      <p>职业：Web前端工程师 </p>
+      <p>籍贯：黑龙江省-绥化市</p>
+      <p>电话：18500476596</p>
+      <p>邮箱：1109398921@qq.com</p>
+      <p><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=HHh9cn95b3F1cHVye1xtbTJ-c3E" ><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_22.png" alt="杨青个人博客网站"></a></p>
+      <p> 
+        <!--以下是QQ邮件列表订阅嵌入代码--><a target="_blank" href="http://list.qq.com/cgi-bin/qf_invite?id=65fb9b3618916f162973471ebc5b97ff786efae0ec9a863e"><img border="0" alt="填写您的邮件地址，订阅我们的精彩内容：" src="http://rescdn.list.qq.com/zh_CN/htmledition/images/qunfa/manage/picMode_light_m.png" /></a> </p>
+    </div>
+</div>
+<div class="clear"></div>
+</div
+</body>
+</html>

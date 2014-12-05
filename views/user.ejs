@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>黑色Html5响应式个人博客模板——主题《如影随形》</title>
+<meta name="keywords" content="个人博客模板,博客模板,响应式" />
+<meta name="description" content="如影随形主题的个人博客模板，神秘、俏皮。" />
+<link href="stylesheets/base.css" rel="stylesheet">
+<link href="css/media.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="ibody">
+<%- include header %>
+<article>
+    <h2 class="about_h">您现在的位置是：<a href="/">首页</a>><a href="1/">慢生活</a></h2>
+<% posts.forEach(function (post, index) { %>
+  <p><h2><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h2>
+  <a href="/u/<%= post.name %>"><img src="<%= post.head %>" class="r_head" /></a>
+  </p>
+	<p class="info">
+	  作者：<a href="/u/<%= post.name %>"><%= post.name %></a> | 
+	  日期：<%= post.time.minute %> | 
+	  分类：
+	  <% post.tags.forEach(function (tag, index) { %>
+	    <% if (tag) { %>
+	      <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
+	    <% } %>
+	  <% }) %>
+	  <% if (post.reprint_info.reprint_from) { %>
+		  <br><a href="/u/<%= post.reprint_info.reprint_from.name %>/<%= post.reprint_info.reprint_from.day %>/<%= post.reprint_info.reprint_from.title %>">原文链接</a>
+		<% } %>
+	</p>
+  <p><%- post.post %></p>
+  <p class="info">
+	  阅读：<%= post.pv %> | 
+	  评论：<%= post.comments.length %> | 
+	  转载：
+	  <% if (post.reprint_info.reprint_to) { %>
+	    <%= post.reprint_info.reprint_to.length %>
+	  <% } else { %>
+	    <%= 0 %>
+	  <% } %>
+	</p>
+<% }) %>
+</article>
+<%- include paging %>
+<%- include footer %>
+</div>
+</body>
+</html>

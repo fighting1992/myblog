@@ -1,0 +1,78 @@
+<link href="/stylesheets/style.css" rel="stylesheet">
+<%- include header %>
+<div class="article">
+<h2 class="about_h">您现在的位置是：<a href="/">首页</a>><a href="1/">个人博客</a></h2>
+<div class="bloglist">
+<% posts.forEach(function (post, index) { %>
+      <div class="newblog">
+        <ul>
+          <h3><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h3>
+          <div class="autor"><span>作者：xx</span><span>分类：[<% post.tags.forEach(function (tag, index) { %>
+      <% if (tag) { %>
+        <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
+      <% } %>
+    <% }) %>]</span><span>浏览（<a href="/"><%= post.pv %></a>）</span><span>评论（<a href="/"><%= post.comments.length %></a>）</span></div>
+          <li class="con-txt">
+          <%- post.post %>
+          
+          </li>
+          <a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>" target="_blank" class="readmore">全文</a>
+        </ul>
+        <div class="figure"><img src="images/00<%= index+1 %>.jpg" ></div>
+        <div class="dateview"><%= post.time.day %></div>
+      </div>
+      <% }) %>
+</div>
+<div class="page">
+<% if (!isFirstPage) { %>
+<a title="上一页" href="?p=<%= page-1 %>">&lt;&lt;</a>
+<% }else{ %>
+<span>&lt;&lt;</span>
+<% } %>
+<b><%= total %></b>
+<% if (!isLastPage) { %>
+<a title="下一页" href="?p=<%= page+1 %>">&gt;&gt;</a>
+<% }else{ %>
+<span>&gt;&gt;</span>
+<% } %>
+</div>
+</div>
+<div class="aside">
+    <div class="rnav">
+       <% postss.forEach(function (tag, index) { %>
+          <li class="rnav1 ">
+          <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
+          </li>
+       <% }) %>
+    </div>
+    <div class="ph_news">
+      <h2>
+        <p>点击排行</p>
+      </h2>
+      <ul class="ph_n">
+      <% postsss.forEach(function (post, index) { %>
+        <li><span class="<% if(index<=2){%><%="num1"%><%}%>"><%=index+1%></span><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></li>
+        <% }) %>
+      </ul>
+    </div>
+    <div class="copyright">
+      <ul>
+        <p>xxxxxx</p>
+        <p>xxxxxxxxx</p>
+        </p>
+      </ul>
+    </div>
+  </div>
+<div class="clear"></div>
+  <!-- 清除浮动 --> 
+</div>
+</body>
+</html>
+<script src="javascripts/jquery.min.js"></script>
+<script>
+for(var i=0;i<$('.con-txt').length;i++){
+  var $text =$('.con-txt').get(i).innerHTML;
+  $('.con-txt').get(i).innerHTML = $text.substr(0,130) + '....';
+  
+}
+</script>

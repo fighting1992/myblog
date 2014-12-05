@@ -1,0 +1,45 @@
+<link href="/stylesheets/post.css" rel="stylesheet">
+<%-include header%>
+<div class="article">
+  <h3 class="about_h">您现在的位置是：首页&nbsp;>&nbsp;留言板</a></h3>
+<% messages.forEach(function(message,index){%> 
+  <div class="message">
+    <span><%= message.name %></span>:<%- message.content %>
+    <p class="info"><%= message.time.minute %></p>
+  </div>
+<%})%>
+<div class="about">
+  <form method="post" class="l-message">
+  <% if (user) { %>
+
+    姓名：<input type="text" name="name" value="<%= user.name %>" /><br />
+    邮箱：<input type="text" name="email" value="<%= user.email %>" /><br />
+  <% } else { %>
+    <h2>Give me the message：</h2>
+    姓名：<input type="text" name="name" /><br />
+    邮箱：<input type="text" name="email" /><br />
+  <% } %>
+    内容：<textarea name="content" rows="5" cols="60"></textarea><br />
+          <input type="submit" class="btn btn-primary" value="留言" style="margin-left:50px;" />
+  </form>
+</div>
+</div>
+<div class="aside">
+      <div class="avatar"><a href="/about"><span>关于我</span></a></div>
+      <div class="topspaceinfo">
+        <h1>子非鱼</h1>
+      <p>子非鱼，焉知鱼之乐....</p>
+      </div>
+      <div class="about_c">
+        <p>网名：尖尖角 | 且行且珍惜</p>
+        <p>职业：Web前端工程师 </p>
+        <p>籍贯：黑龙江省-绥化市</p>
+        <p>电话：18500476596</p>
+        <p>邮箱：1109398921@qq.com</p>
+          <p><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=1109398921@qq.com" ><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_22.png" alt="陈岩个人博客网站"></a></p>
+      </div>
+    </div>
+<div class="clear"></div>
+</div>
+</body>
+</html>
